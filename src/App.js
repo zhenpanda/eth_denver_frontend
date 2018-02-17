@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
 import getWeb3 from './utils/getWeb3'
 
-import './css/oswald.css'
-import './css/open-sans.css'
-import './css/pure-min.css'
-import './App.css'
+import './css/home.css'
+
+import Home from './pages/Home';
 
 class App extends Component {
   constructor(props) {
@@ -71,15 +70,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <main className="container">
+        <main className="">
 
-          <div className="pure-g">
-            <div className="pure-u-1-1">
-
-              <h1>Grantd</h1>
-
-            </div>
-          </div>
+          <Home />
 
         </main>
       </div>
