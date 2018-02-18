@@ -58,19 +58,23 @@ class Home extends Component {
                   </Link>
                 </div>
                 <div className="col s4 m4">
-                  <div className="home-nav-card">
-                    <div className="home-nav-box-top" />
-                    <img src={gears} className="home-nav-img" />
-                    <div className="home-nav-text">Track Progress</div>
-                  </div>
-                </div>
-                <div className="col s4 m4">
+                  <Link to="/fund">
                   <div className="home-nav-card">
                     <div className="home-nav-box-top" />
                     <img src={payment} className="home-nav-img" />
                     <div className="home-nav-text">Fund Projects</div>
                   </div>
+                  </Link>
                 </div>
+
+                <div className="col s4 m4">
+                  <div className="home-nav-card">
+                    <div className="home-nav-box-top" />
+                    <img src={gears} className="home-nav-img" />
+                    <div className="home-nav-text">TCR Groups</div>
+                  </div>
+                </div>
+
               </div>
             </div>
             <div className="col s1 m1" />

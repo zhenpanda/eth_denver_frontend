@@ -1,0 +1,178 @@
+.fund-area-bg {
+    height: 43em;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9fcf7+0,f5f9f0+100;L+Green+3D */
+    background: #f9fcf7; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #f9fcf7 0%, #f5f9f0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #f9fcf7 0%,#f5f9f0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #f9fcf7 0%,#f5f9f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.grey-color {
+    color: #bfc0c5;
+}
+
+
+/* header card css */
+.fund-header-card {
+    /* background-color: rgba(143, 39, 39, 0) !important; */
+    background-color: white;
+    margin-top: 1.75em !important;
+    height: 8.5em;
+    border: 0.08em solid #bfc0c5;
+}
+.fund-header-text {
+    color: #f5b770;
+    margin-top: 1.25em;
+    margin-left: 0.72em;
+    font-size: 2em;
+}
+.fund-header-logo4 {
+    margin-top: 1.25em;
+    width: 6em;
+}
+.fund-header-card-line {
+    opacity: 0.7;
+    border: 0 none;
+    border-top: 0.18em solid #f5b770;
+    background: none;
+    height:0;
+    margin-top: 6em;
+    margin-left: -1.5em;
+    width: 8.1em;
+    -webkit-animation: fadein 2s; 
+    -moz-animation: fadein 2s;
+     -ms-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+         animation: fadein 2s;
+} 
+.fund-header-card-line-two {
+    opacity: 0.7;
+    border: 0 none;
+    border-top: 0.18em solid #5db7e0;
+    background: none;
+    height:0;
+    margin-top: 10em;
+    margin-left: -1.5em;
+    width: 8.1em;
+    -webkit-animation: fadein 2s; 
+    -moz-animation: fadein 2s;
+     -ms-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+         animation: fadein 2s;
+}
+.fund-header-card-line-three {
+    opacity: 0.7;
+    border: 0 none;
+    border-top: 0.18em solid #9bc771;
+    background: none;
+    height:0;
+    margin-top: 14em;
+    margin-left: -1.5em;
+    width: 8.1em;
+    -webkit-animation: fadein 4s; 
+    -moz-animation: fadein 4s;
+     -ms-animation: fadein 4s; 
+      -o-animation: fadein 4s; 
+         animation: fadein 4s;
+}
+
+.fund-header-card:after {
+    content:"";
+    margin-left: 10em;
+    z-index: -10;
+    border-left: 0.1em solid #f5b770;
+    height: 1.7em !important;
+    font-size: 1.5em;
+}
+
+.fund-info-section {
+    margin-top: 6em !important;
+    padding-top: 2em !important;
+    background-color: rgba(143, 39, 39, 0) !important;
+    margin-top: 1.75em !important;
+    height: 29.0em;
+    border: 0.08em solid #bfc0c5;
+}
+.fund-info-block {
+    content:"";
+    margin-left: 3.5em;
+    margin-top: -2.55em;
+    z-index: -10;
+    border-left: 0.1em solid #5db7e0;
+    height: 1.2em;
+    font-size: 1.5em;
+}
+
+
+/* fund right side */
+.fund-header-card-right {
+    /* background-color: rgba(143, 39, 39, 0) !important; */
+    background-color: white;
+    margin-top: 1.75em !important;
+    border: 0.08em solid #bfc0c5;
+}
+.fund-header-card-block {
+    height: 14.5em;
+}
+.fund-header-card-mid:after {
+    content:"";
+    margin-top: -1em;
+    margin-left: 19em;
+    z-index: -10;
+    border-left: 0.1em solid #5db7e0;
+    padding-bottom: 1.0em;
+    font-size: 1.5em;
+    line-height: 1.2;
+}
+.fund-body-card-right {
+    background-color: rgba(143, 39, 39, 0) !important;
+    margin-top: 1.25em !important;
+    height: 14em;
+    border: 0.08em solid #bfc0c5;
+}
+
+/* map list of grants */
+.single-grant-top {
+    list-style-type: none;
+    height: 1.5em;
+    font-size: 1.25em;
+    margin-top: 0.75em;
+    padding: 0.75em;
+    line-height: 0.45em;
+}
+.single-grant-label {
+    margin-left: 1em;
+    display: inline;
+}
+.single-grant-label-next {
+    margin-left: 4.75em;
+    display: inline;
+}
+.single-grant-block:hover {
+    background-color: #fff1df;
+}
+.single-grant-block {
+    list-style-type: none;
+    height: 3em;
+    margin-top: 1em;
+    padding: 0.75em;
+    cursor: pointer;
+    font-size: 1.05em;
+    border: 0.08em solid #bfc0c5;
+}
+.single-grant-title {
+    color:  #918b8b;
+    display: inline;
+    width: 1em;
+}
+.single-grant-topic {
+    color: #5db7e0;
+    margin-left: 1em;
+    display: inline;
+}
+.single-grant-address {
+    color: #9bc771;
+    margin-left: 1em;
+    display: inline;
+}

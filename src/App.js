@@ -7,9 +7,11 @@ import getWeb3 from './utils/getWeb3'
 import './css/index.css'
 import './css/home.css'
 import './css/grant.css'
+import './css/fund.css'
 
 import Home from './pages/Home';
 import Grant from './pages/Grant';
+import Fund from './pages/Fund';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +28,7 @@ class App extends Component {
     switch (this.props.match.url) {
       case "/": return( <Route path="/" component={ Home } />);
       case "/grant": return( <Route path="/grant" component={ Grant } />);
+      case "/fund": return( <Route path="/fund" component={ Fund } />);
       default: break;
     }
   }
