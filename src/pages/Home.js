@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+
 import $ from 'jquery';
 
 import splashImg from '../assets/images/splash.png';
@@ -33,8 +35,8 @@ class Home extends Component {
             <div className="col s1 m1" />
             <div className="col s10 m10">
               <div className="home-intro-text">
-              <div className="home-intro-text-main">GRANT</div>provides transparency and accountability for public funding. Current funding mechanisms are inefficient, opaque, and centralized. GRANT allows entities to create proposals and fund grants through milestone enabled smart contracts. As milestones are funded, the grantee completes and validates the milestone requirements to release funds.
-              </div>
+              <div className="home-intro-text-main">GRANT</div>
+              GRANT provides transparency and accountability for public funding. Current funding mechanisms are inefficient, opaque, and centralized. GRANT allows curators to source proposals and fund grants through elastic capital allocation.</div>
             </div>
             <div className="col s1 m1" />
           </div>
@@ -47,17 +49,19 @@ class Home extends Component {
             <div className="col s10 m10">
               <div className="row">
                 <div className="col s4 m4">
+                  <Link to="/grant">
                   <div className="home-nav-card">
                     <div className="home-nav-box-top" />
                     <img src={spaceship} className="home-nav-img" />
-                    <div className="home-nav-text">Propose Grant</div>
+                      <div className="home-nav-text">Propose Grant</div>
                   </div>
+                  </Link>
                 </div>
                 <div className="col s4 m4">
                   <div className="home-nav-card">
                     <div className="home-nav-box-top" />
                     <img src={gears} className="home-nav-img" />
-                    <div className="home-nav-text">Track Milestones</div>
+                    <div className="home-nav-text">Track Progress</div>
                   </div>
                 </div>
                 <div className="col s4 m4">

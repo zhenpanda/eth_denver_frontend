@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+
 import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
 import getWeb3 from './utils/getWeb3'
 
+import './css/index.css'
 import './css/home.css'
+import './css/grant.css'
 
 import Home from './pages/Home';
+import Grant from './pages/Grant';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +18,15 @@ class App extends Component {
     this.state = {
       storageValue: 0,
       web3: null
+    }
+  }
+
+  // console.log(this.props.match.url);
+  routeRender() {
+    switch (this.props.match.url) {
+      case "/": return( <Route path="/" component={ Home } />);
+      case "/grant": return( <Route path="/grant" component={ Grant } />);
+      default: break;
     }
   }
 
@@ -70,11 +84,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <main className="">
-
-          <Home />
-
-        </main>
+        {this.routeRender()}
       </div>
     );
   }
