@@ -13,9 +13,11 @@ class Feat extends Component {
             {"grantTitle": "Building Elec Dam","grantTopic": "Infrastructure"},
             {"grantTitle": "Quantum Research","grantTopic": "Research"}
         ];
-        {/* amountToFund
+        {/* 
+        amountToFund
         grantAddress
-        proposerAddress */}
+        proposerAddress 
+        */}
         return (
             <div className=" moveFromTopFade delay300">
                 {test.map((c,i,a)=>{
@@ -63,11 +65,16 @@ class Feat extends Component {
             <div className="col s4 m4" />
         </div>
         <div className="row">
-            <div className="col s1 m1" />
-            <div className="col s10 m10">
-                {this.displayGrants()}
+            <div className="col s4 m4">
+                <div className="card card-panel list-of-feats-block">
+                    <div className="list-of-feats-text">Featured Feats List</div>
+                    <div className="list-of-feats-section">
+                </div>
+                </div>
             </div>
-            <div className="col s1 m1" />
+            <div className="col s6 m6">
+            </div>
+            <div className="col s2 m2" />
         </div>
         <div className="feat-bot-pic-block">
             <img src={peopleStage} className="feat-bot-pic-img moveFromBottomFade delay300" /> 
