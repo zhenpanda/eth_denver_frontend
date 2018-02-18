@@ -4,7 +4,7 @@ import $ from 'jquery';
 import logo5 from '../assets/images/logo5.png';
 import peopleStage from '../assets/images/ppl_stage.png';
 import getWeb3 from "../utils/getWeb3";
-import {getAllGrants} from "../utils/web3Calls";
+import {getAllGrants, getAllFEATs, getAllFEATProposalsForFeat} from "../utils/web3Calls";
 
 class Feat extends Component {
 
@@ -12,7 +12,9 @@ class Feat extends Component {
         super(props);
         this.state = {
             web3: null,
-            grantList: []
+            grantList: [],
+            featList: [],
+            proposalsForCurrentFeat:[]
         };
     }
 
@@ -28,8 +30,22 @@ class Feat extends Component {
                 });
                 console.log(result);
             });
+            getAllFEATs(results.web3).then((result) => {
+                this.setState({
+                    featList: result.reverse()
+                });
+                console.log(result);
+            });
         }).catch(() => {
             console.log('Error finding web3.')
+        });
+    }
+
+    getProposalsForFeat(featAddress) {
+        getAllFEATProposalsForFeat(this.state.web3, featAddress).then((result) => {
+            this.setState({
+                proposalsForCurrentFeat: result.reverse()
+            });
         });
     }
 
