@@ -4,7 +4,7 @@ import $ from 'jquery';
 import FundDetails from '../components/FundDetail';
 import logo4 from '../assets/images/logo4.png';
 import getWeb3 from './../utils/getWeb3'
-import {getAllGrants, getSpecificGrant} from './../utils/web3Calls';
+import {getAllGrants, getSpecificGrant, fundGrant} from './../utils/web3Calls';
 
 class Fund extends Component {
 
@@ -17,6 +17,7 @@ class Fund extends Component {
         };
         this.makeList = this.makeList.bind(this);
         this.grantSelected = this.grantSelected.bind(this);
+        this.fundGrantClicked = this.fundGrantClicked.bind(this);
     }
 
     componentDidMount() {
@@ -78,14 +79,26 @@ class Fund extends Component {
     }
 
     displayFundDetails() {
-        if(true) {
-            if(this.state.web3 && this.state.currentGrant.grantAddress) {
-                return (<FundDetails details={this.state.currentGrant}/>);
-            }
-            return (<div className="fund-standin" />);
-        }else{
-            return (<div className="fund-standin" />);
+        if(this.state.web3 && this.state.currentGrant.grantAddress) {
+            return (<FundDetails details={this.state.currentGrant}/>);
         }
+        return (<div className="fund-standin" />);
+    }
+
+    fundGrantClicked() {
+        //hard coded grant value for now. Choice will be added after MVP hackathon stage
+        const fundingAmount = "1000000000000000000";
+        fundGrant(this.state.web3, this.state.currentGrant.grantAddress, fundingAmount).then((result) => {
+            const grantCopy = this.state.currentGrant;
+            //also temp hard coded increment because web3 is being odd
+            grantCopy.amountGranted = grantCopy.amountGranted + 1;
+            this.setState({
+                currentGrant: grantCopy
+            });
+            console.log(result);
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 
   render() {
@@ -140,7 +153,7 @@ class Fund extends Component {
                                 <div className="col s1 m1" />
                                 <div className="col s5 m5">
                                     <div className="fund-btn">
-                                        <a className="waves-effect cyan lighten-1 btn">Fund Grant</a>
+                                        <a className="waves-effect cyan lighten-1 btn" onClick={this.fundGrantClicked}>Fund Grant</a>
                                     </div>
                                 </div>
                                 <div className="col s5 m5">
