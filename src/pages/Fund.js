@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+import FundDetails from '../components/FundDetail';
 import logo4 from '../assets/images/logo4.png';
 
 class Fund extends Component {
@@ -14,7 +15,7 @@ class Fund extends Component {
             {"Title": "Building Elec Dam","Topic": "Infrastructure","Address": "0xD18785571AE7F3b100e5B8788E3827120282f170"}
         ];
         return (
-          <div className=" moveFromRightFade delay500">
+          <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
                 return (
                 <li className="single-grant-block" key={i}>
@@ -34,6 +35,13 @@ class Fund extends Component {
             })}
           </div>
         );
+    }
+    displayFundDetails() {
+        if(true) {
+            return (<FundDetails />);
+        }else{
+            return (<div className="fund-standin" />);
+        }
     }
 
   render() {
@@ -57,13 +65,7 @@ class Fund extends Component {
                             </div>
                         </div>
                         <div className="fund-info-section moveFromBottomFade">
-                            {/* bot left grant info */}
-                            <div className="row">
-                                <div className="col s12 m12">
-                                    <div className="fund-info-block">
-                                    </div>
-                                </div>
-                            </div>
+                            {this.displayFundDetails()}
                         </div>
                     </div>
                     <div className="col s1 m1">
@@ -75,7 +77,7 @@ class Fund extends Component {
                         <div className="fund-header-card-right moveFromRightFade">
                             <div className="row">
                                 <div className="col s12 m12">
-                                <div className="fund-header-text">Select a grant to fund:</div>
+                                <div className="fund-header-text-left">Select a grant to fund:</div>
                                     <div className="fund-header-card-block">
                                         <div className="single-grant-top">
                                             <p className="single-grant-label">Title</p>
@@ -89,9 +91,20 @@ class Fund extends Component {
                         </div>
                         <div className="fund-header-card-mid moveFromTopFade" />
                         <div className="fund-body-card-right moveFromRightFade">
+                            <div className="fund-header-text-right">Review Grant Details before Funding</div>
                             <div className="row">
-                                <div className="col s12 m12">
+                                <div className="col s1 m1" />
+                                <div className="col s5 m5">
+                                    <div className="fund-btn">
+                                        <a className="waves-effect cyan lighten-1 btn">Fund Grant</a>
+                                    </div>
                                 </div>
+                                <div className="col s5 m5">
+                                    <div className="fund-btn">
+                                        <a className="waves-effect orange lighten-2 btn">Submit to Feat</a>
+                                    </div>
+                                </div>
+                                <div className="col s1 m1" />
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,6 @@
     color: #bfc0c5;
 }
 
-
 /* header card css */
 .fund-header-card {
     /* background-color: rgba(143, 39, 39, 0) !important; */
@@ -26,6 +25,26 @@
     margin-top: 1.25em;
     margin-left: 0.72em;
     font-size: 2em;
+}
+.fund-header-text-left {
+    color: #68645f;
+    margin-top: 1.25em;
+    margin-left: 0.72em;
+    font-size: 2em;
+}
+.fund-header-text-bot {
+    color: #929090;
+    margin-top: -0.525em;
+    text-align: center;
+    font-size: 2em;
+}
+.fund-header-text-right {
+    color: #96918b;
+    margin-top: 0.65em;
+    margin-bottom: -0.42em;
+    /* margin-left: 2.72em; */
+    text-align: center;
+    font-size: 1.75em;
 }
 .fund-header-logo4 {
     margin-top: 1.25em;
@@ -67,7 +86,7 @@
     border-top: 0.18em solid #9bc771;
     background: none;
     height:0;
-    margin-top: 14em;
+    margin-top: 15em;
     margin-left: -1.5em;
     width: 8.1em;
     -webkit-animation: fadein 4s; 
@@ -85,16 +104,7 @@
     height: 1.7em !important;
     font-size: 1.5em;
 }
-
-.fund-info-section {
-    margin-top: 6em !important;
-    padding-top: 2em !important;
-    background-color: rgba(143, 39, 39, 0) !important;
-    margin-top: 1.75em !important;
-    height: 29.0em;
-    border: 0.08em solid #bfc0c5;
-}
-.fund-info-block {
+.fund-info-bar {
     content:"";
     margin-left: 3.5em;
     margin-top: -2.55em;
@@ -105,22 +115,58 @@
 }
 
 
+.fund-info-section {
+    background-color: rgba(143, 39, 39, 0) !important;
+    margin-top: 6em !important;
+    padding-top: 2em !important;
+    margin-top: 1.75em !important;
+    height: 29.5em;
+    border: 0.08em solid #bfc0c5;
+}
+.fund-standin {
+    background-color: rgba(143, 39, 39, 0) !important;
+    font-size: 1.00em;
+    line-height: 1.85em;
+}
+.fund-info-block {
+    /* background-color: white; */
+    font-size: 1.00em;
+    line-height: 1.85em;
+}
+.fund-info-block-single {
+    background-color: rgb(170, 228, 188);
+    margin-top: 0.35em;
+    padding-left: 0.95em;
+}
+.fund-info-block-text {
+    background-color: rgb(170, 228, 188);
+    margin-top: 5.65em;
+    padding-left: 0.95em;
+    
+}
+.fund-info-block-single-right {
+    background-color: #5db7e0;
+    color: white;
+    margin-top: 0.35em;
+    padding-left: 0.3em;
+}
+
 /* fund right side */
 .fund-header-card-right {
-    /* background-color: rgba(143, 39, 39, 0) !important; */
-    background-color: white;
+    background-color: rgba(143, 39, 39, 0) !important;
+    /* background-color: white; */
     margin-top: 1.75em !important;
     border: 0.08em solid #bfc0c5;
 }
 .fund-header-card-block {
-    height: 14.5em;
+    height: 16.8em;
 }
 .fund-header-card-mid:after {
     content:"";
     margin-top: -1em;
     margin-left: 19em;
     z-index: -10;
-    border-left: 0.1em solid #5db7e0;
+    border-left: 0.1em solid #9bc771;
     padding-bottom: 1.0em;
     font-size: 1.5em;
     line-height: 1.2;
@@ -128,7 +174,7 @@
 .fund-body-card-right {
     background-color: rgba(143, 39, 39, 0) !important;
     margin-top: 1.25em !important;
-    height: 14em;
+    height: 10em;
     border: 0.08em solid #bfc0c5;
 }
 
@@ -153,6 +199,7 @@
     background-color: #fff1df;
 }
 .single-grant-block {
+    background-color: white;
     list-style-type: none;
     height: 3em;
     margin-top: 1em;
@@ -164,7 +211,6 @@
 .single-grant-title {
     color:  #918b8b;
     display: inline;
-    width: 1em;
 }
 .single-grant-topic {
     color: #5db7e0;
@@ -175,4 +221,9 @@
     color: #9bc771;
     margin-left: 1em;
     display: inline;
+}
+
+.fund-btn {
+    text-align: center;
+    margin-top: 2em;
 }
