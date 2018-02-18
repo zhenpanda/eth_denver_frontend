@@ -23,7 +23,6 @@ class Feat extends Component {
                     <li className="single-feat-block" key={i}>
                         <div className="row">
                             <div className="col s3 m3">
-                                <div className="circle-teal-one" />
                                 <p className="">{c.grantTitle}</p>
                             </div>
                             <div className="col s3 m3">
@@ -31,7 +30,6 @@ class Feat extends Component {
                             </div>
                             <div className="col s3 m3"></div>
                             <div className="col s3 m3">
-                                <div className="circle-teal-two" />
                             </div>
                         </div>
                     </li>

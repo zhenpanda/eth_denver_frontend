@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { ToastContainer, toast } from 'react-toastify';
+
 import logo3 from '../assets/images/logo3.png';
 import getWeb3 from './../utils/getWeb3'
 import {createGrant} from './../utils/web3Calls';
+
 const ipfsAPI = require('ipfs-api');
 const Buffer = require('buffer/').Buffer;  // note: the trailing slash is important!
-
 
 class Grant extends Component {
 
@@ -73,7 +74,9 @@ class Grant extends Component {
       position: toast.POSITION.TOP_CENTER
     });
   };
-
+  ipfsClick() {
+    $( "#ipfs-btn" ).click();
+  }
     captureFile (event) {
         event.stopPropagation();
         event.preventDefault();
@@ -164,10 +167,7 @@ class Grant extends Component {
                 <div className="col s1 m1">
                     <form id='captureMedia' action="#" onSubmit={this.handleSubmit}>
                         <div className="file-field input-field">
-                            <div className="circle-teal-one grant-submit-square">
-                                <span>+</span>
-                                <input type='file' onChange={this.captureFile} />
-                            </div>
+                          <input id="ipfs-btn" type='file' onChange={this.captureFile} />
                         </div>
                     </form>
                 </div>
@@ -238,7 +238,7 @@ class Grant extends Component {
               </div>
 
               <div className="grant-submit-block">
-                <div className="circle-teal-one grant-submit-square" />
+                <div className="circle-gold-one grant-submit-square" onClick={() => this.ipfsClick()} />
                 <a className="waves-effect waves-light btn" onClick={this.submitGrant}>Sumbit Grant Proposal</a>
               </div> 
 

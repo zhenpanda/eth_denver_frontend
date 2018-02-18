@@ -57,23 +57,3 @@
 .single-feat-block:hover {
     background-color: rgb(196, 221, 219);
 }
-.circle-teal-one-feat {
-	width: 0.6em;
-	height: 0.6em;
-	background: #8dd8d8;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-    border-radius:0.6em;
-    margin-top: -0.55em;
-    margin-left: -1.15em;
-}
-.circle-teal-two-feat {
-	width: 0.6em;
-	height: 0.6em;
-	background: #8dd8d8;
-	-moz-border-radius: 0.6em;
-	-webkit-border-radius: 0.6em;
-    border-radius:0.6em;
-    margin-top: -0.55em;
-    margin-left: 14.45em;
-}

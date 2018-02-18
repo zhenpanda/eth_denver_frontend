@@ -163,8 +163,8 @@ class Fund extends Component {
                                             <p className="single-grant-label-next"></p>
                                             <p className="single-grant-label-next">Topic</p>
                                         </div>
-                                        {this.makeDummyList()}
                                         {this.makeList()}
+                                        {this.makeDummyList()}
                                     </div>
                                 </div>
                             </div>
