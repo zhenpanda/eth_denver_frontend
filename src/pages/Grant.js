@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { ToastContainer, toast } from 'react-toastify';
-
 import logo3 from '../assets/images/logo3.png';
 import getWeb3 from './../utils/getWeb3'
 import {createGrant} from './../utils/web3Calls';
+const ipfsAPI = require('ipfs-api');
+const Buffer = require('buffer/').Buffer;  // note: the trailing slash is important!
+
 
 class Grant extends Component {
 
@@ -13,15 +15,23 @@ class Grant extends Component {
       this.state = {
           web3: null,
           name: 'Space Mission Alpha Onias III',
-          ipfsHash: '056a9ec2e4847755d9012f31dfecfeb193a42330c3e83b9fd52086fc4d5eabb5',
+          ipfsHash: null,
           topic: 'Science Exploration and Discovery',
           amountNeeded: '10000000000000000000',
           summary: 'Lorem ipsum dolor sit amet, nostrum erroribus vis no, aliquid molestiae instructior usu in. Exerci everti neglegentur at cum. Pro id aeque congue definitionem'
 
       };
+      this.ipfsApi = ipfsAPI({host: 'hackathon.paynelabs.net', port: '5001', protocol: 'http'});
       this.submitGrant = this.submitGrant.bind(this);
+      this.uploadFileClicked = this.uploadFileClicked.bind(this);
+      this.captureFile = this.captureFile.bind(this);
+      this.saveToIpfs = this.saveToIpfs.bind(this);
+      this.arrayBufferToString = this.arrayBufferToString.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
 
   }
+
+
   componentDidMount() {
     $('html,body').animate({ scrollTop: 0 }, 'fast');
 
@@ -65,6 +75,44 @@ class Grant extends Component {
       position: toast.POSITION.TOP_CENTER
     });
   };
+
+    captureFile (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        const file = event.target.files[0];
+        let reader = new window.FileReader();
+        reader.onloadend = () => this.saveToIpfs(reader);
+        reader.readAsArrayBuffer(file);
+    }
+
+    saveToIpfs (reader) {
+        let ipfsId;
+        const buffer = Buffer.from(reader.result);
+        this.ipfsApi.add(buffer, { progress: (prog) => console.log(`received: ${prog}`) })
+            .then((response) => {
+                console.log(response);
+                ipfsId = response[0].hash;
+                console.log(ipfsId);
+                this.setState({
+                    ipfsHash: ipfsId
+                });
+                console.log(this.state);
+            }).catch((err) => {
+            console.error(err)
+        })
+    }
+
+    arrayBufferToString (arrayBuffer) {
+        return String.fromCharCode.apply(null, new Uint16Array(arrayBuffer));
+    }
+
+    handleSubmit (event) {
+        event.preventDefault();
+    }
+
+  uploadFileClicked() {
+
+  }
 
   render() {
     return (
@@ -115,12 +163,21 @@ class Grant extends Component {
                 <div className="col s1 m1" />
               </div>
               <div className="row grant-body-card-second">
-                <div className="col s1 m1" />
+                <div className="col s1 m1">
+                    <form id='captureMedia' action="#" onSubmit={this.handleSubmit}>
+                        <div className="file-field input-field">
+                            <div className="circle-teal-one grant-submit-square">
+                                <span>+</span>
+                                <input type='file' onChange={this.captureFile} />
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <div className="col s10 m10">
                   <div className="grant-body-form">
                     <div className="input-field">
                       <label className="active" htmlFor="ipfs-hash">IPFS Description Hash:</label>
-                      <input defaultValue={this.state.ipfsHash} id="ipfs-hash" type="text" />
+                      <input value={this.state.ipfsHash} disabled={true} id="ipfs-hash" type="text" />
                     </div>
                   </div>
                 </div>
