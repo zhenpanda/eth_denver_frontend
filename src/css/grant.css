@@ -20,9 +20,9 @@
 	width: 1.5em;
 	height: 1.5em;
 	background: #8dd8d8;
-	-moz-border-radius: 0.15em;
-	-webkit-border-radius: 0.15em;
-    border-radius:0.15em;
+	-moz-border-radius: 1.5em;
+	-webkit-border-radius: 1.5em;
+    border-radius: 1.5em;
     margin-top: -2.05em;
     margin-left: -1.55em;
 }

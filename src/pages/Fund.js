@@ -52,9 +52,33 @@ class Fund extends Component {
         }
 
     }
-
+    makeDummyList() {
+        let dummy = [
+            {"grantTitle": "Building Elec Dam","grantTopic": "Infrastructure"},
+            {"grantTitle": "Quantum Research","grantTopic": "Research"}
+        ];
+        return (
+            <div className=" moveFromTopFade delay300">
+                {dummy.map((c,i,a)=>{
+                    return (
+                    <li className="single-grant-block" key={i}>
+                        <div className="row">
+                            <div className="col s6 m6">
+                                <p className="single-grant-title">{c.grantTitle}</p>
+                            </div>
+                            <div className="col s6 m6">
+                                <p className="single-grant-topic">{c.grantTopic}</p>
+                            </div>
+                        </div>
+                    </li>
+                    )
+                })}
+            </div>
+            );
+    }
     makeList() {
-        const data = this.state.grantList;
+        let data = this.state.grantList;
+        // console.log(data);
         return (
           <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
@@ -139,6 +163,7 @@ class Fund extends Component {
                                             <p className="single-grant-label-next"></p>
                                             <p className="single-grant-label-next">Topic</p>
                                         </div>
+                                        {this.makeDummyList()}
                                         {this.makeList()}
                                     </div>
                                 </div>

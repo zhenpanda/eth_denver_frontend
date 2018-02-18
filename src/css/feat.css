@@ -4,7 +4,7 @@
     background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    background: url("../assets/images/blockchain.png") no-repeat center center fixed; 
+    background-image: url("../assets/images/blockchain.png"); 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,9 +12,25 @@
 }
 
 .feat-header-section {
-    height: 5em;
-    margin-top: 2em;
-    background-color: rgb(75, 168, 199) !important;
+    margin-top: 1.3em !important;
+    padding: 0.3em !important;
+}
+.feat-header-body {
+    height: 6em;
+    background-color: rgb(149, 207, 180) !important;
+}
+.feat-header-img {
+    width: 4.5em;
+    margin-top: 0.6em;
+}
+.feat-header-text {
+    color: white;
+    font-size: 2.75em;
+    margin-top: 0.3em;
+    display: block;
+    font-weight: 500 !important;
+    line-height: 1.66em;
+    margin-left: -0.3em;
 }
 
 .feat-bot-pic-block {
@@ -26,4 +42,38 @@
     width: 80%;
     display: block;
     margin-bottom: -6em;
+}
+
+.single-feat-block {
+    background-color: white;
+    list-style-type: none;
+    height: 5em;
+    margin-top: 1em;
+    padding: 0.15em;
+    cursor: pointer;
+    font-size: 1.05em;
+    border: 0.08em solid #bfc0c5;
+}
+.single-feat-block:hover {
+    background-color: rgb(196, 221, 219);
+}
+.circle-teal-one-feat {
+	width: 0.6em;
+	height: 0.6em;
+	background: #8dd8d8;
+	-moz-border-radius: 0.6em;
+	-webkit-border-radius: 0.6em;
+    border-radius:0.6em;
+    margin-top: -0.55em;
+    margin-left: -1.15em;
+}
+.circle-teal-two-feat {
+	width: 0.6em;
+	height: 0.6em;
+	background: #8dd8d8;
+	-moz-border-radius: 0.6em;
+	-webkit-border-radius: 0.6em;
+    border-radius:0.6em;
+    margin-top: -0.55em;
+    margin-left: 14.45em;
 }

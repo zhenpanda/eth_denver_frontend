@@ -25,7 +25,6 @@ class FundDetail extends Component {
                     <div className="fund-info-block-single moveFromTopFade delay200">Amount Granted:</div>
                     <div className="fund-info-block-single moveFromTopFade delay300">Summary:</div>
                     <div className="fund-info-block-text moveFromTopFade delay300">IPFS Hash:</div>
-                    <div className="fund-info-block-single moveFromTopFade delay300">Funded:</div>
                 </div>
             </div>
             <div className="col s8 m8">
@@ -38,7 +37,6 @@ class FundDetail extends Component {
                         <div className="fund-info-block-single-right moveFromLeftFade delay400">{this.props.details.amountGranted}</div>
                         <div className="fund-info-block-single-right moveFromLeftFade delay400">{this.props.details.summary}</div>
                         <div className="fund-info-block-single-right moveFromLeftFade delay500">{this.props.details.ipfsDescriptionHash}</div>
-                        <div className="fund-info-block-single-right moveFromLeftFade delay500">{this.props.details.funded}</div>
                     </div>
                 </div>
             </div>

@@ -54,9 +54,7 @@ class Grant extends Component {
           this.state.ipfsHash).then((result) => {
             console.log(result);
             this.notify(result);
-            setTimeout(() => {
-              window.location.href = "/";
-            }, 5000);
+            // setTimeout(() => {window.location.href = "/"}, 5000);
       }).catch((error) => {
         console.log(error);
       })
