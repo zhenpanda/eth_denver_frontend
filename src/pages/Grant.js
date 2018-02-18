@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import { ToastContainer, toast } from 'react-toastify';
 
 import logo3 from '../assets/images/logo3.png';
 import getWeb3 from './../utils/getWeb3'
@@ -42,15 +43,34 @@ class Grant extends Component {
           this.state.summary,
           this.state.ipfsHash).then((result) => {
             console.log(result);
+            this.notify(result);
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 5000);
       }).catch((error) => {
         console.log(error);
       })
   }
+  notify(inputObj) {
+    let msg = 'Success! Grant has been created!';
+    let txMsg = "tx:" + inputObj.tx ;
+    let hash = "blockHash:" + inputObj.receipt.blockHash;
+    toast.success(msg, {
+      position: toast.POSITION.TOP_CENTER
+    });
+    toast.warn(hash, {
+      position: toast.POSITION.TOP_CENTER
+    });
+    toast.info(txMsg, {
+      position: toast.POSITION.TOP_CENTER
+    });
+  };
 
   render() {
     return (
       <div className="grant-area-bg">
         {/* grant header */}
+        <ToastContainer autoClose={100000} />
         <div className="grant-header-block moveFromTopFade">
           <div className="row">
             <div className="col s3 m3" />

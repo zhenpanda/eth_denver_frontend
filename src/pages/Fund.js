@@ -58,20 +58,15 @@ class Fund extends Component {
         return (
           <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
-                if(i > 0) {
-                    return('');
-                }
+                if(i > 0) { return('') };
                 return (
                 <li className="single-grant-block" key={i} onClick={() => this.grantSelected(c.grantAddress)}>
                     <div className="row">
-                        <div className="col s3 m3">
+                        <div className="col s6 m6">
                             <p className="single-grant-title">{c.grantTitle}</p>
                         </div>
-                        <div className="col s2 m2">
+                        <div className="col s6 m6">
                             <p className="single-grant-topic">{c.grantTopic}</p>
-                        </div>
-                        <div className="col s7 m7">
-                            <p className="single-grant-address">{c.grantAddress}</p>
                         </div>
                     </div>
                 </li>
@@ -141,8 +136,8 @@ class Fund extends Component {
                                     <div className="fund-header-card-block">
                                         <div className="single-grant-top">
                                             <p className="single-grant-label">Title</p>
+                                            <p className="single-grant-label-next"></p>
                                             <p className="single-grant-label-next">Topic</p>
-                                            <p className="single-grant-label-next">Address</p>
                                         </div>
                                         {this.makeList()}
                                     </div>

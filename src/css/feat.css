@@ -1,6 +1,29 @@
 .feat-area-bg {
-    height: 40em;
-    width: 100%;
-    background-image: url("../assets/images/blockchain.png");
-    background-color: #fde1fc;
+    height: 32em;
+    background: -moz-linear-gradient(-45deg, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: url("../assets/images/blockchain.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.feat-header-section {
+    height: 5em;
+    margin-top: 2em;
+    background-color: rgb(75, 168, 199) !important;
+}
+
+.feat-bot-pic-block {
+    position: absolute;
+    bottom: 0%;
+    left: 26%;
+}
+.feat-bot-pic-img {
+    width: 80%;
+    display: block;
+    margin-bottom: -6em;
 }
