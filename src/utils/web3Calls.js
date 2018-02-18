@@ -87,6 +87,7 @@ export function getSpecificGrant(_web3, _grantAddress) {
         let grantInfo = {
         };
 
+        grantInfo.grantAddress = _grantAddress;
         grantInfo.owner = await instance.owner();
         grantInfo.grantTitle = await instance.grantTitle();
         grantInfo.grantTopic = await instance.grantTopic();

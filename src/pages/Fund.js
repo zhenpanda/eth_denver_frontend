@@ -4,7 +4,7 @@ import $ from 'jquery';
 import FundDetails from '../components/FundDetail';
 import logo4 from '../assets/images/logo4.png';
 import getWeb3 from './../utils/getWeb3'
-import {getAllGrants} from './../utils/web3Calls';
+import {getAllGrants, getSpecificGrant} from './../utils/web3Calls';
 
 class Fund extends Component {
 
@@ -12,9 +12,11 @@ class Fund extends Component {
         super(props);
         this.state = {
             web3: null,
-            grantList: []
+            grantList: [],
+            currentGrant: {}
         };
         this.makeList = this.makeList.bind(this);
+        this.grantSelected = this.grantSelected.bind(this);
     }
 
     componentDidMount() {
@@ -33,13 +35,30 @@ class Fund extends Component {
             console.log('Error finding web3.')
         });
     }
+
+    grantSelected(grantAddress) {
+        if(this.state.web3) {
+            getSpecificGrant(this.state.web3, grantAddress).then((result) => {
+                console.log(result);
+                this.setState({
+                    currentGrant: result
+                });
+            });
+        } else {
+            this.setState({
+                currentGrant: {}
+            });
+        }
+
+    }
+
     makeList() {
         const data = this.state.grantList;
         return (
           <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
                 return (
-                <li className="single-grant-block" key={i}>
+                <li className="single-grant-block" key={i} onClick={() => this.grantSelected(c.grantAddress)}>
                     <div className="row">
                         <div className="col s3 m3">
                             <p className="single-grant-title">{c.grantTitle}</p>
@@ -57,9 +76,13 @@ class Fund extends Component {
           </div>
         );
     }
+
     displayFundDetails() {
         if(true) {
-            return (<FundDetails />);
+            if(this.state.web3 && this.state.currentGrant.grantAddress) {
+                return (<FundDetails details={this.state.currentGrant}/>);
+            }
+            return (<div className="fund-standin" />);
         }else{
             return (<div className="fund-standin" />);
         }

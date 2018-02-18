@@ -31,14 +31,14 @@ class FundDetail extends Component {
             <div className="col s8 m8">
                 <div className="fund-info-block-right">
                     <div className="fund-info-block">
-                        <div className="fund-info-block-single-right">0x3618516F45CD3c913F81F9987AF41077932Bc40d</div>
-                        <div className="fund-info-block-single-right">Space Mission Alpha Onias III</div>
-                        <div className="fund-info-block-single-right">Science</div>
-                        <div className="fund-info-block-single-right">50,000 ETH</div>
-                        <div className="fund-info-block-single-right">1000 ETH</div>
-                        <div className="fund-info-block-single-right">"Lorem ipsum dolor sit amet, nostrum erroribus vis no, aliquid molestiae instructior usu in. Exerci everti neglegentur at cum. Pro id aeque congue definitionem</div>
-                        <div className="fund-info-block-single-right">056a9ec2e4847755d9012f31dfecfeb193a42330c3</div>
-                        <div className="fund-info-block-single-right">No</div>
+                        <div className="fund-info-block-single-right">{this.props.details.grantAddress}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.grantTitle}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.grantTopic}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.amountNeeded}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.amountGranted}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.summary}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.ipfsDescriptionHash}</div>
+                        <div className="fund-info-block-single-right">{this.props.details.funded}</div>
                     </div>
                 </div>
             </div>
