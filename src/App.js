@@ -8,10 +8,12 @@ import './css/index.css'
 import './css/home.css'
 import './css/grant.css'
 import './css/fund.css'
+import './css/feat.css'
 
 import Home from './pages/Home';
 import Grant from './pages/Grant';
 import Fund from './pages/Fund';
+import Feat from './pages/Feat';
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +31,7 @@ class App extends Component {
       case "/": return( <Route path="/" component={ Home } />);
       case "/grant": return( <Route path="/grant" component={ Grant } />);
       case "/fund": return( <Route path="/fund" component={ Fund } />);
+      case "/feat": return( <Route path="/feat" component={ Feat } />);
       default: break;
     }
   }

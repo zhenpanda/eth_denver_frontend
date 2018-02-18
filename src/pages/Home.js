@@ -68,11 +68,13 @@ class Home extends Component {
                 </div>
 
                 <div className="col s4 m4">
+                  <Link to="/feat">
                   <div className="home-nav-card">
                     <div className="home-nav-box-top" />
                     <img src={gears} className="home-nav-img" />
                     <div className="home-nav-text">Feat Groups</div>
                   </div>
+                  </Link>
                 </div>
 
               </div>
