@@ -24,6 +24,10 @@ textarea {
   font-size: 1.2em !important;
   margin-top: 0.5em !important;
 }
+.clean-row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 @keyframes fadein {
   from { opacity: 0; }

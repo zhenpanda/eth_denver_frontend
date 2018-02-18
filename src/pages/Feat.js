@@ -34,7 +34,8 @@ class Feat extends Component {
                 this.setState({
                     featList: result.reverse()
                 });
-                console.log(result);
+                // console.log("this feat list...");
+                // console.log(result);
             });
         }).catch(() => {
             console.log('Error finding web3.')
@@ -49,37 +50,35 @@ class Feat extends Component {
         });
     }
 
-    displayGrants() {
-        let test = [
-            {"grantTitle": "Building Elec Dam","grantTopic": "Infrastructure"},
-            {"grantTitle": "Quantum Research","grantTopic": "Research"}
-        ];
-        {/* 
-        amountToFund
-        grantAddress
-        proposerAddress 
-        */}
-        return (
-            <div className=" moveFromTopFade delay300">
-                {test.map((c,i,a)=>{
-                    return (
-                    <li className="single-feat-block" key={i}>
-                        <div className="row">
-                            <div className="col s3 m3">
-                                <p className="">{c.grantTitle}</p>
-                            </div>
-                            <div className="col s3 m3">
-                                <p className="">{c.grantTopic}</p>
-                            </div>
-                            <div className="col s3 m3"></div>
-                            <div className="col s3 m3">
-                            </div>
-                        </div>
-                    </li>
-                    )
-                })}
-            </div>
-        );
+    displayFeats() {
+        // FEATAddress:"0x627306090abab3a6e1400e93458d60c78a8bef59"
+        // FEATName:"Bob Jones Group"
+        // FEATSymbol:"BJG"
+        // creatorAddress:"0x627306090abab3a6e1400e9345bc60c78a8bef57"
+        if(this.state.featList) {
+            // console.log(this.state.featList);
+            let feats = this.state.featList;
+            return (
+                <div className=" moveFromTopFade delay300">
+                    {feats.map((c,i,a)=>{
+                        return (
+                            <li className="single-feat-block" key={i}>
+                                <div className="single-feat-section">
+                                <div className="row">
+                                    <div className="col s12 m12">
+                                        <div className="single-feat-text">Name: <p className="single-feat-add-text">{c.FEATName}</p></div>
+                                        <div className="single-feat-text">Symbol: <p className="single-feat-add-text">{c.FEATSymbol}</p></div>
+                                        <div className="single-feat-text">Address: <p className="single-feat-add-text">{c.FEATAddress}</p></div>
+                                        <div className="single-feat-text">Creator: <p className="single-feat-add-text">{c.creatorAddress}</p></div>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
+                        )
+                    })}
+                </div>
+            );
+        }
     }
 
   render() {
@@ -105,17 +104,21 @@ class Feat extends Component {
             </div>
             <div className="col s4 m4" />
         </div>
-        <div className="row">
+        <div className="row clean-row">
             <div className="col s4 m4">
                 <div className="card card-panel list-of-feats-block">
                     <div className="list-of-feats-text">Featured Feats List</div>
                     <div className="list-of-feats-section">
-                </div>
+                        {this.displayFeats()}
+                    </div>
                 </div>
             </div>
-            <div className="col s6 m6">
+            <div className="col s8 m8">
+                <div className="card card-panel list-of-grants-block">
+                    <div className="list-of-grants-text">Grants in Feat</div>
+                    <div className="list-of-grants-section"></div>
+                </div>
             </div>
-            <div className="col s2 m2" />
         </div>
         <div className="feat-bot-pic-block">
             <img src={peopleStage} className="feat-bot-pic-img moveFromBottomFade delay300" /> 

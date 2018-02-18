@@ -41,18 +41,18 @@
 .feat-bot-pic-img {
     width: 80%;
     display: block;
-    margin-bottom: -6em;
+    margin-bottom: -8em;
 }
 
 .single-feat-block {
-    background-color: white;
+    margin: 0.3em;
     list-style-type: none;
-    height: 5em;
-    margin-top: 1em;
-    padding: 0.15em;
+    height: 8em;
     cursor: pointer;
-    font-size: 1.05em;
-    border: 0.08em solid #bfc0c5;
+    font-size: 1.10em;
+    border: 0.08em solid rgb(200, 178, 211) !important;
+    line-height: 1.34em;
+    color: rgb(68, 57, 73);
 }
 .single-feat-block:hover {
     background-color: rgb(196, 221, 219);
@@ -60,10 +60,11 @@
 
 .list-of-feats-block {
     padding: 0.15em !important;
-    border: 0.08em solid #bfc0c5;
+    border: 0.02em solid #bfc0c5;
+    background-color: rgba(143, 39, 39, 0) !important;
 }
 .list-of-feats-section {
-    background-color: white;
+    background-color: rgba(143, 39, 39, 0) !important;
     list-style-type: none;
     height: 20em;
     padding: 0.15em;
@@ -73,5 +74,54 @@
     font-size: 1.65em;
     text-align: center;
     color: white;
-    background-color: rgb(160, 207, 185) !important;
+    background-color: rgb(105, 184, 147) !important;
+}
+
+.list-of-feats-block {
+    padding: 0.15em !important;
+    border: 0.02em solid #bfc0c5;
+    background-color: rgba(143, 39, 39, 0) !important;
+}
+.list-of-feats-section {
+    background-color: rgba(143, 39, 39, 0) !important;
+    list-style-type: none;
+    height: 20em;
+    padding: 0.15em;
+    font-size: 1.05em;
+}
+.list-of-feats-text {
+    font-size: 1.65em;
+    text-align: center;
+    color: white;
+    background-color: rgb(171, 130, 190) !important;
+}
+.list-of-grants-block {
+    padding: 0.15em !important;
+    border: 0.02em solid #bfc0c5;
+    background-color: rgba(143, 39, 39, 0) !important;
+}
+.list-of-grants-section {
+    background-color: rgba(143, 39, 39, 0) !important;
+    list-style-type: none;
+    height: 20em;
+    padding: 0.15em;
+    font-size: 1.05em;
+}
+.list-of-grants-text {
+    font-size: 1.65em;
+    text-align: center;
+    color: white;
+    background-color: rgb(119, 184, 204) !important;
+}
+
+.single-feat-text {
+    color: rgb(153, 159, 161);
+}
+.single-feat-add-text {
+    color: rgb(138, 76, 130);
+    display: inline;
+    margin-left: 1em;
+}
+.single-feat-section {
+    margin-top: 1em;
 }
