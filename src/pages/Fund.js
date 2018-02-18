@@ -4,7 +4,9 @@ import $ from 'jquery';
 import FundDetails from '../components/FundDetail';
 import logo4 from '../assets/images/logo4.png';
 import getWeb3 from './../utils/getWeb3'
-import {getAllGrants, getSpecificGrant, fundGrant} from './../utils/web3Calls';
+import {getAllGrants, getAllFEATs, getSpecificGrant, fundGrant, firstProposeProposal} from './../utils/web3Calls';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 class Fund extends Component {
 
@@ -13,11 +15,13 @@ class Fund extends Component {
         this.state = {
             web3: null,
             grantList: [],
+            featList: [],
             currentGrant: {}
         };
         this.makeList = this.makeList.bind(this);
         this.grantSelected = this.grantSelected.bind(this);
         this.fundGrantClicked = this.fundGrantClicked.bind(this);
+        this.submitToFeatClicked = this.submitToFeatClicked.bind(this);
     }
 
     componentDidMount() {
@@ -29,6 +33,12 @@ class Fund extends Component {
             getAllGrants(results.web3).then((result) => {
                 this.setState({
                     grantList: result.reverse()
+                });
+                console.log(result);
+            });
+            getAllFEATs(results.web3).then((result) => {
+                this.setState({
+                    featList: result.reverse()
                 });
                 console.log(result);
             });
@@ -123,10 +133,36 @@ class Fund extends Component {
         });
     }
 
+    notify(inputObj) {
+        let msg = 'Success! Proposal has been submitted to feat!';
+        let txMsg = "tx:" + inputObj.tx ;
+        let hash = "blockHash:" + inputObj.receipt.blockHash;
+        toast.success(msg, {
+            position: toast.POSITION.TOP_CENTER
+        });
+        toast.warn(hash, {
+            position: toast.POSITION.TOP_CENTER
+        });
+        toast.info(txMsg, {
+            position: toast.POSITION.TOP_CENTER
+        });
+    };
+
+    submitToFeatClicked() {
+        //hard coded featAddress for now. Choice will be added after MVP hackathon stage
+        const fundingAmount = "1000000000000000000";
+        firstProposeProposal(this.state.web3, this.state.featList[0].FEATAddress, this.state.currentGrant.grantAddress, fundingAmount).then((result) => {
+            console.log(result);
+            this.notify(result);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
   render() {
     return (
       <div className="fund-area-bg">
-            {/* fund header */}
+          <ToastContainer autoClose={100000} />
             <div className="fund-header-block">
                 <div className="row">
                     <div className="col s1 m1" />
@@ -163,8 +199,8 @@ class Fund extends Component {
                                             <p className="single-grant-label-next"></p>
                                             <p className="single-grant-label-next">Topic</p>
                                         </div>
-                                        {this.makeList()}
                                         {this.makeDummyList()}
+                                        {this.makeList()}
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +217,7 @@ class Fund extends Component {
                                 </div>
                                 <div className="col s5 m5">
                                     <div className="fund-btn">
-                                        <a className="waves-effect orange lighten-2 btn">Submit to Feat</a>
+                                        <a className="waves-effect orange lighten-2 btn" onClick={this.submitToFeatClicked}>Submit to Feat</a>
                                     </div>
                                 </div>
                                 <div className="col s1 m1" />
