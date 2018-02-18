@@ -42,7 +42,7 @@ class FundDetail extends Component {
                         <div className="fund-info-block-single-right moveFromLeftFade delay400">{this.props.details.summary}</div>
                         <a
                            download='Description.pdf'
-                           className="fund-info-block-single-right moveFromLeftFade delay500"
+                           className="fund-info-block-single-right-last moveFromLeftFade delay500"
                            href={'http://hackathon.paynelabs.net:5001/api/v0/get/' + this.props.details.ipfsDescriptionHash}>
                             {this.props.details.ipfsDescriptionHash}
                         </a>

@@ -150,6 +150,13 @@
     margin-top: 0.35em;
     padding-left: 0.3em;
 }
+.fund-info-block-single-right-last {
+    background-color: #5db7e0;
+    color: white;
+    margin-top: 0.35em;
+    padding-left: 0.3em;
+    font-size: 0.91em;
+}
 
 /* fund right side */
 .fund-header-card-right {

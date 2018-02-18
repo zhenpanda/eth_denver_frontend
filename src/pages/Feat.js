@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+import GrantsList from '../components/GrantsList';
 import logo5 from '../assets/images/logo5.png';
 import peopleStage from '../assets/images/ppl_stage.png';
+
 import getWeb3 from "../utils/getWeb3";
 import {getAllGrants, getAllFEATs, getAllFEATProposalsForFeat} from "../utils/web3Calls";
 
@@ -59,10 +61,10 @@ class Feat extends Component {
             // console.log(this.state.featList);
             let feats = this.state.featList;
             return (
-                <div className=" moveFromTopFade delay300">
+                <div className=" delay300">
                     {feats.map((c,i,a)=>{
                         return (
-                            <li className="single-feat-block" key={i}>
+                            <li className="single-feat-block moveFromLeftFade" key={i}>
                                 <div className="single-feat-section">
                                 <div className="row">
                                     <div className="col s12 m12">
@@ -80,7 +82,21 @@ class Feat extends Component {
             );
         }
     }
-
+    displayGrants() {
+        if(this.state.grantList) {
+            let grantList = this.state.grantList;
+            return (
+                <div className="grants-list-row">
+                    {grantList.map((c,i,a)=>{
+                        if(i < 4) {
+                            return (<GrantsList />)
+                        }
+                    })}
+                </div>
+            );
+        }
+        // <GrantsList />
+    }
   render() {
     return (
       <div className="feat-area-bg">
@@ -116,7 +132,9 @@ class Feat extends Component {
             <div className="col s8 m8">
                 <div className="card card-panel list-of-grants-block">
                     <div className="list-of-grants-text">Grants in Feat</div>
-                    <div className="list-of-grants-section"></div>
+                    <div className="list-of-grants-section">
+                        {this.displayGrants()}
+                    </div>
                 </div>
             </div>
         </div>
