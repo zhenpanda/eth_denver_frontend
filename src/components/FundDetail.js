@@ -5,6 +5,10 @@ class FundDetail extends Component {
         super(props);
     }
 
+    getHref(){
+
+    }
+
   render() {
     return (
       <div className="fund-details">
@@ -36,7 +40,12 @@ class FundDetail extends Component {
                         <div className="fund-info-block-single-right moveFromLeftFade delay300">{this.props.details.amountNeeded}</div>
                         <div className="fund-info-block-single-right moveFromLeftFade delay400">{this.props.details.amountGranted}</div>
                         <div className="fund-info-block-single-right moveFromLeftFade delay400">{this.props.details.summary}</div>
-                        <div className="fund-info-block-single-right moveFromLeftFade delay500">{this.props.details.ipfsDescriptionHash}</div>
+                        <a
+                           download='Description.pdf'
+                           className="fund-info-block-single-right moveFromLeftFade delay500"
+                           href={'http://hackathon.paynelabs.net:5001/api/v0/get/' + this.props.details.ipfsDescriptionHash}>
+                            {this.props.details.ipfsDescriptionHash}
+                        </a>
                     </div>
                 </div>
             </div>
