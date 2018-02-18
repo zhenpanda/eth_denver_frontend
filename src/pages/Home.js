@@ -1,22 +1,79 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 import splashImg from '../assets/images/splash.png';
+import logo from '../assets/images/logo2.png';
+import spaceship from '../assets/images/spaceship.png';
+import gears from '../assets/images/gears.png';
+import payment from '../assets/images/payment.png';
 
 class Home extends Component {
-
   componentDidMount() {
-    // console.log(this.props.page);
+    $('html,body').animate({ scrollTop: 0 }, 'slow');
   }
+  scrollDown() {
+    $('html,body').animate({ scrollTop: 650 }, 'slow');
+  }
+
   render() {
     return (
       <div className="home-area-bg">
+        {/* splash img */}
         <div className="row">
           <div className="col s2 m2" />
           <div className="col s8 m8 home-splash-block">
-            <img src={splashImg} className="home-splash-img card z-depth-3" />
+            <img src={splashImg} className="home-splash-img card z-depth-3 moveFromTopFade delay100" />
+            <img src={logo} className="home-logo-btn moveFromBottomFade delay200" onClick={() => this.scrollDown()} />
           </div>
           <div className="col s2 m2" />
         </div>
+        
+        <div className="home-intro-text-block">
+          <div className="row">
+            <div className="col s1 m1" />
+            <div className="col s10 m10">
+              <div className="home-intro-text">
+              <div className="home-intro-text-main">GRANT</div>provides transparency and accountability for public funding. Current funding mechanisms are inefficient, opaque, and centralized. GRANT allows entities to create proposals and fund grants through milestone enabled smart contracts. As milestones are funded, the grantee completes and validates the milestone requirements to release funds.
+              </div>
+            </div>
+            <div className="col s1 m1" />
+          </div>
+        </div>
+        
+        <div className="home-nav-area">
+          <div className="row">
+
+            <div className="col s1 m1" />
+            <div className="col s10 m10">
+              <div className="row">
+                <div className="col s4 m4">
+                  <div className="home-nav-card">
+                    <div className="home-nav-box-top" />
+                    <img src={spaceship} className="home-nav-img" />
+                    <div className="home-nav-text">Propose Grant</div>
+                  </div>
+                </div>
+                <div className="col s4 m4">
+                  <div className="home-nav-card">
+                    <div className="home-nav-box-top" />
+                    <img src={gears} className="home-nav-img" />
+                    <div className="home-nav-text">Track Milestones</div>
+                  </div>
+                </div>
+                <div className="col s4 m4">
+                  <div className="home-nav-card">
+                    <div className="home-nav-box-top" />
+                    <img src={payment} className="home-nav-img" />
+                    <div className="home-nav-text">Fund Projects</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col s1 m1" />
+
+          </div>
+        </div>
+
       </div>
     );
   }

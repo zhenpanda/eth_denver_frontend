@@ -6,11 +6,65 @@
 
 .home-splash-block {
     margin-top: 4em;
-    width: 45em;
+    width: 42em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 .home-splash-img {
-    width: 45em;
+    width: 42em;
+}
+.home-logo-btn {
+    width: 7.6em;
+    position: absolute;
+    top: 60%;
+    left: 44.25%;
+    cursor: pointer;
+}
+
+.home-nav-area {
+    height: 30em;
+}
+.home-intro-text-block {
+    margin-top: 12em;
+}
+.home-intro-text {
+    color: #757679;
+}
+.home-intro-text-main {
+    font-size: 5em;
+    line-height: 1em;
+    margin-bottom: 0.2em;
+    /* display: inline-flex; */
+    width: 3.45em;
+    border: 0.01em solid #757679;
+}
+
+.home-nav-card {
+    cursor: pointer;
+    margin-top: 1em;
+    border-width: 0.15em;
+    border-style: solid;
+    border-color: #34b3d3 !important; 
+}
+.home-nav-box-top {
+    height: 2em;
+    background-color: #34b3d3;
+}
+.home-nav-card:hover {
+   color: rgba(81, 181, 214, 0.64) !important;
+}
+
+.home-nav-img {
+    padding-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.home-nav-text {
+    color: #797575;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 1em;
+    padding-bottom: 1.5em;
 }
