@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class FundDetail extends Component {
+    constructor(props) {
+        super(props);
+    }
 
   render() {
     return (

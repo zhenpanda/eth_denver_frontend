@@ -3,17 +3,38 @@ import $ from 'jquery';
 
 import FundDetails from '../components/FundDetail';
 import logo4 from '../assets/images/logo4.png';
+import getWeb3 from './../utils/getWeb3'
+import {getAllGrants} from './../utils/web3Calls';
 
 class Fund extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            web3: null,
+            grantList: []
+        };
+        this.makeList = this.makeList.bind(this);
+    }
+
     componentDidMount() {
         $('html,body').animate({ scrollTop: 0 }, 'fast');
+        getWeb3.then(results => {
+            this.setState({
+                web3: results.web3
+            });
+            getAllGrants(results.web3).then((result) => {
+                this.setState({
+                    grantList: result.reverse()
+                });
+                console.log(result);
+            });
+        }).catch(() => {
+            console.log('Error finding web3.')
+        });
     }
-    makeList(inputList) {
-        const data =[
-            {"Title": "Mission Alpha On","Topic": "Science","Address": "0x98D03320f8AE806Fcb35F13e73398009caf9C72c"},
-            {"Title": "Cancer Research","Topic": "Science","Address": "0x80cfD274937D40c5e3D0e910a81D3330f3C10898"},
-            {"Title": "Building Elec Dam","Topic": "Infrastructure","Address": "0xD18785571AE7F3b100e5B8788E3827120282f170"}
-        ];
+    makeList() {
+        const data = this.state.grantList;
         return (
           <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
@@ -21,13 +42,13 @@ class Fund extends Component {
                 <li className="single-grant-block" key={i}>
                     <div className="row">
                         <div className="col s3 m3">
-                            <p className="single-grant-title">{c.Title}</p>
+                            <p className="single-grant-title">{c.grantTitle}</p>
                         </div>
                         <div className="col s2 m2">
-                            <p className="single-grant-topic">{c.Topic}</p>
+                            <p className="single-grant-topic">{c.grantTopic}</p>
                         </div>
                         <div className="col s7 m7">
-                            <p className="single-grant-address">{c.Address}</p>
+                            <p className="single-grant-address">{c.grantAddress}</p>
                         </div>
                     </div>
                 </li>
