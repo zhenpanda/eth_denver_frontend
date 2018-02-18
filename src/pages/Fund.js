@@ -54,7 +54,7 @@ class Fund extends Component {
     }
 
     makeList() {
-        const data = this.state.grantList;
+        const data = this.state.grantList[0];
         return (
           <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
