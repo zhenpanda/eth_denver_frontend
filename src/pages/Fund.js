@@ -54,10 +54,13 @@ class Fund extends Component {
     }
 
     makeList() {
-        const data = this.state.grantList[0];
+        const data = this.state.grantList;
         return (
           <div className=" moveFromTopFade delay300">
             {data.map((c,i,a)=>{
+                if(i > 0) {
+                    return('');
+                }
                 return (
                 <li className="single-grant-block" key={i} onClick={() => this.grantSelected(c.grantAddress)}>
                     <div className="row">
