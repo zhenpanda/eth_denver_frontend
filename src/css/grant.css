@@ -26,6 +26,7 @@
     margin-top: -2.05em;
     margin-left: -1.55em;
 }
+
 /* header card css */
 .grant-header-card {
     background-color: rgba(143, 39, 39, 0) !important;
@@ -142,9 +143,24 @@
       -o-animation: fadein 2s; 
          animation: fadein 2s;
 }
+
+.circle-gold-one {
+	width: 1.5em;
+	height: 1.5em;
+	background: #f4fcad;
+	-moz-border-radius: 0.15em;
+	-webkit-border-radius: 0.15em;
+    border-radius: 0.15em;
+    margin-top: -2.05em;
+    margin-left: -1.55em;
+}
 .grant-submit-square {
     position: absolute;
     top: 66%;
     left: 20%;
-    background-color: rgb(215, 183, 223) !important;
+    background-color: rgb(247, 231, 141) !important;
+    cursor: pointer;
+}
+.ipfs-btn {
+    visibility: hidden;
 }
