@@ -3,11 +3,36 @@ import $ from 'jquery';
 
 import logo5 from '../assets/images/logo5.png';
 import peopleStage from '../assets/images/ppl_stage.png';
+import getWeb3 from "../utils/getWeb3";
+import {getAllGrants} from "../utils/web3Calls";
 
 class Feat extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            web3: null,
+            grantList: []
+        };
+    }
+
     componentDidMount() {
         $('html,body').animate({ scrollTop: 0 }, 'fast');
+        getWeb3.then(results => {
+            this.setState({
+                web3: results.web3
+            });
+            getAllGrants(results.web3).then((result) => {
+                this.setState({
+                    grantList: result.reverse()
+                });
+                console.log(result);
+            });
+        }).catch(() => {
+            console.log('Error finding web3.')
+        });
     }
+
     displayGrants() {
         let test = [
             {"grantTitle": "Building Elec Dam","grantTopic": "Infrastructure"},
