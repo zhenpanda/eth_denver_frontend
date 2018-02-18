@@ -167,24 +167,39 @@ export function getAllFEATs(_web3) {
             const contractAtAddress = contractAtABI.at(instance.address);
             let event = contractAtAddress.FEATCreated({},{fromBlock: 0, toBlock: 'latest'});
 
-            event.get(function(error, result) {
-                if(error) {
-                    reject.log(error);
-                } else {
-                    const tempArray = [];
-                    result.forEach((feat) => {
-                        tempArray.push(
-                            {
-                                FEATAddress: feat.args.FEATAddress,
-                                FEATName: feat.args.FEATName,
-                                FEATSymbol: feat.args.FEATSymbol,
-                                creatorAddress: feat.args.creatorAddress
-                            }
-                        );
-                    });
-                    resolve(tempArray);
+            // event.get(function(error, result) {
+            //     if(error) {
+            //         reject.log(error);
+            //     } else {
+            //         const tempArray = [];
+            //         result.forEach((feat) => {
+            //             tempArray.push(
+            //                 {
+            //                     FEATAddress: feat.args.FEATAddress,
+            //                     FEATName: feat.args.FEATName,
+            //                     FEATSymbol: feat.args.FEATSymbol,
+            //                     creatorAddress: feat.args.creatorAddress
+            //                 }
+            //             );
+            //         });
+            //         resolve(tempArray);
+            //     }
+            // });
+            const tempArray = [
+                {
+                    FEATAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef59",
+                    FEATName: "Peter Griffin Group",
+                    FEATSymbol: "PGG",
+                    creatorAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef57"
+                },
+                {
+                    FEATAddress: "0x627306090abab3a6e1400e93458d60c78a8bef59",
+                    FEATName: "Bob Jones Group",
+                    FEATSymbol: "BJG",
+                    creatorAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef57"
                 }
-            });
+            ];
+            resolve(tempArray);
         });
     });
 }
@@ -221,24 +236,39 @@ export function getAllFEATProposalsForFeat(_web3, _featAddress) {
         const contractAtAddress = contractAtABI.at(_featAddress);
         let event = contractAtAddress.GrantProposed({FEATAddress: _featAddress},{fromBlock: 0, toBlock: 'latest'});
 
-        event.get(function(error, result) {
-            if(error) {
-                reject.log(error);
-            } else {
-                const tempArray = [];
-                result.forEach((proposal) => {
-                    tempArray.push(
-                        {
-                            FEATAddress: proposal.args.FEATAddress,
-                            amountToFund: _web3.fromWei(proposal.args.amountToFund, "ether").toNumber(),
-                            grantAddress: proposal.args.grantAddress,
-                            proposer: proposal.args.proposer
-                        }
-                    );
-                });
-                resolve(tempArray);
+        // event.get(function(error, result) {
+        //     if(error) {
+        //         reject.log(error);
+        //     } else {
+        //         const tempArray = [];
+        //         result.forEach((proposal) => {
+        //             tempArray.push(
+        //                 {
+        //                     FEATAddress: proposal.args.FEATAddress,
+        //                     amountToFund: _web3.fromWei(proposal.args.amountToFund, "ether").toNumber(),
+        //                     grantAddress: proposal.args.grantAddress,
+        //                     proposer: proposal.args.proposer
+        //                 }
+        //             );
+        //         });
+        //         resolve(tempArray);
+        //     }
+        // });
+        const tempArray = [
+            {
+                FEATAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef59",
+                amountToFund: "1000000000000000000",
+                grantAddress: "0xsdf83kdid93b3a6e1400e9345bc60c78a8bef59",
+                creatorAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef57"
+            },
+            {
+                FEATAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef59",
+                amountToFund: "1000000000000000000",
+                grantAddress: "0xsdf83kdid93b3a6sdfsfsdfsdfsd0c78a8bef59",
+                creatorAddress: "0x627306090abab3a6e1400e9345bc60c78a8bef57"
             }
-        });
+        ];
+        resolve(tempArray);
     });
 }
 
