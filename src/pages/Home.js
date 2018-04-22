@@ -72,7 +72,7 @@ class Home extends Component {
                   <div className="home-nav-card">
                     <div className="home-nav-box-top" />
                     <img src={gears} className="home-nav-img" />
-                    <div className="home-nav-text">Vote Feats</div>
+                    <div className="home-nav-text">Feats Dashboard</div>
                   </div>
                   </Link>
                 </div>

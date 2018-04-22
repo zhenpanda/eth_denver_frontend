@@ -88,7 +88,7 @@ class Feat extends Component {
             return (
                 <div className="grants-list-row">
                     {grantList.map((c,i,a)=>{
-                        if(i < 4) {
+                        if(i < 3) {
                             return (<GrantsList />)
                         }
                     })}
